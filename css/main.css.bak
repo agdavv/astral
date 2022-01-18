@@ -919,7 +919,7 @@ textarea, label {
   -moz-transform: scale(1.5);
   -ms-transform: scale(1.5);
   -o-transform: scale(1.5);
-  transform: scale(1.7);
+  transform: scale(1.6);
 }
 .service-hex:hover .st1 {
   fill: #933fba;
