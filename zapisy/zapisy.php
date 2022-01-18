@@ -1,5 +1,4 @@
 <?php
-var_dump($_POST);exit;
 
     require 'database.php';
 
@@ -24,6 +23,7 @@ var_dump($_POST);exit;
         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
     $statement = mysqli_stmt_init($conn);
 
+    var_dump("hey");
 
 
 /*
