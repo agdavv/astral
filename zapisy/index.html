@@ -109,13 +109,134 @@
 
                         <div class="row">
                             <div class="col-xs-12 col-sm-7 col-md-7 col-md-offset-1 col-lg-offset-2">
-                                <form action="mail.php" method="post" enctype="multipart/form-data">
-                                    <input type="text" name="name" placeholder="Name"> <br>
-                                    <input type="text" name="email" placeholder="email"> <br>
-                                    <input type="text" name="message" placeholder="Message"> <br>
-                                    <input type="file" name="file"> <br>
-                                    <input type="submit" value="Submit">
-                                </form>
+                                    <form id="regForm" action="./mail.php" method="post" class="contact-form no-gutter">
+                                        <h1>Formularz Zgłoszeniowy:</h1>
+                                        <!-- One "tab" for each step in the form: -->
+                                        <div class="tab" style="margin-top: 16px;">
+                                            <input type="file" name="file">
+                                            <div class="row">
+                                                <div class="col-xs-12 col-sm-6">
+                                                    <div class="input-field name">
+                                                        <span class="input-icon" id="name" ><i class="tf-profile-male"></i></span>
+                                                        <input type="text" class="form-control"  placeholder="Nazwa drużyny" name="nazwaDruzyny">
+                                                    </div>
+                                                </div>
+                                                <div class="col-xs-12 col-sm-6">
+                                                    <div class="input-field email">
+                                                        <span class= "input-icon" id="email"><i class="tf-envelope2"></i></span>
+                                                        <input type="text" class="form-control" placeholder="Fanpage (jeśli posiadacie)" name="fanpageDruzyny">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-xs-12 col-sm-12">
+                                                    <div class="input-field">
+                                                        <span class= "input-icon" id="subject"><i class="tf-pricetags"></i></span>
+                                                        <input type="text" class="form-control" placeholder="Logo, użyj imgur, format '.png'" name="logoDruzyny">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tab">CEO/Kapitan drużyny:
+                                            <div class="row">
+                                                <div class="col-xs-12 col-sm-6">
+                                                    <div class="input-field name">
+                                                        <span class="input-icon" id="name" ><i class="tf-profile-male"></i></span>
+                                                        <input type="email" class="form-control"  placeholder="Twój adres e-mail" name="emailceo">
+                                                    </div>
+                                                </div>
+                                                <div class="col-xs-12 col-sm-6">
+                                                    <div class="input-field email">
+                                                        <span class= "input-icon" id="name"><i class="tf-envelope2"></i></span>
+                                                        <input type="text" class="form-control" placeholder="Twój nick discord" name="discordceo">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tab">Skład Drużyny:
+											<div class="row">
+                                                <div class="col-xs-12 col-sm-6">
+                                                    <div class="input-field">
+                                                        <span class= "input-icon" id="subject"><i class="tf-pricetags"></i></span>
+                                                        <input type="text" class="form-control" placeholder="Link Steam - Kapitan" name="logoDruzyny">
+                                                    </div>
+                                                </div>
+                                                <div class="col-xs-12 col-sm-6">
+                                                    <div class="input-field">
+                                                        <span class= "input-icon" id="subject"><i class="tf-pricetags"></i></span>
+                                                        <input type="text" class="form-control" placeholder="Link Steam - Gracz nr 2" name="logoDruzyny">
+                                                    </div>
+                                                </div>
+                                            </div>
+											<div class="row">
+                                                <div class="col-xs-12 col-sm-6">
+                                                    <div class="input-field">
+                                                        <span class= "input-icon" id="subject"><i class="tf-pricetags"></i></span>
+                                                        <input type="text" class="form-control" placeholder="Link Steam - Gracz nr 3" name="logoDruzyny">
+                                                    </div>
+                                                </div>
+                                                <div class="col-xs-12 col-sm-6">
+                                                    <div class="input-field">
+                                                        <span class= "input-icon" id="subject"><i class="tf-pricetags"></i></span>
+                                                        <input type="text" class="form-control" placeholder="Link Steam - Gracz nr 4" name="logoDruzyny">
+                                                    </div>
+                                                </div>
+                                            </div>
+											<div class="row">
+                                                <div class="col-xs-12 col-sm-6">
+                                                    <div class="input-field">
+                                                        <span class= "input-icon" id="subject"><i class="tf-pricetags"></i></span>
+                                                        <input type="text" class="form-control" placeholder="Link Steam - Gracz nr 5" name="logoDruzyny">
+                                                    </div>
+                                                </div>
+											</div>
+											<div class="row">
+                                                <div class="col-xs-12 col-sm-6">
+                                                    <div class="input-field">
+                                                        <span class= "input-icon" id="subject"><i class="tf-pricetags"></i></span>
+                                                        <input type="text" class="form-control" placeholder="Link Steam - Stand-in nr 1" name="logoDruzyny">
+                                                    </div>
+                                                </div>
+                                                <div class="col-xs-12 col-sm-6">
+                                                    <div class="input-field">
+                                                        <span class= "input-icon" id="subject"><i class="tf-pricetags"></i></span>
+                                                        <input type="text" class="form-control" placeholder="Link Steam - Stand-in nr 2" name="logoDruzyny">
+                                                    </div>
+                                                </div>
+                                            </div>
+											<div class="row">
+												<div class="col-xs-12 col-sm-6">
+													<div class="input-field">
+														<span class= "input-icon" id="subject"><i class="tf-pricetags"></i></span>
+                                                        <input type="text" class="form-control" placeholder="Link Steam - CEO/Menadżer" name="logoDruzyny">
+                                                    </div>
+                                                </div>
+												<div class="col-xs-12 col-sm-6">
+													<div class="input-field">
+														<span class= "input-icon" id="subject"><i class="tf-pricetags"></i></span>
+														<input type="text" class="form-control" placeholder="Link Steam - Trener" name="logoDruzyny">
+													</div>
+												</div>
+                                            </div>
+                                        </div>
+                                        <div class="tab">Login Info:
+                                          <p><input placeholder="Username..." oninput="this.className = ''" name="uname"></p>
+                                          <p><input placeholder="Password..." oninput="this.className = ''" name="pword" type="password"></p>
+                                        </div>
+                                        <div style="overflow:auto;">
+                                          <div style="float:right;">
+                                            <button type="button" id="prevBtn" onclick="nextPrev(-1)">Powrót</button>
+                                            <button type="button" id="nextBtn" onclick="nextPrev(1)">Dalej</button>
+                                          </div>
+                                        </div>
+                                        <!-- Circles which indicates the steps of the form: -->
+                                        <div style="text-align:center;margin-top:40px;">
+                                          <span class="step"></span>
+                                          <span class="step"></span>
+                                          <span class="step"></span>
+                                          <span class="step"></span>
+                                        </div>
+                                    </form>
                             </div> <!-- /.col- -->
                         </div> <!-- /.row -->
  
