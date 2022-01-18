@@ -1,37 +1,46 @@
 <?php
-    $eol = "\r\n";
-    $to = "astralwars@hajdecki.com"; // replace this mail with yours
     $filenameee =  $_FILES['file']['name'];
     $fileName = $_FILES['file']['tmp_name']; 
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $usermessage = $_POST['message'];
     
+    $message ="Name = ". $name . "\r\n  Email = " . $email . "\r\n Message =" . $usermessage; 
+    
+    $subject ="My email subject";
+    $fromname ="My Website Name";
+    $fromemail = 'hajdecki.dawid@gmail.com';  //if u dont have an email create one on your cpanel
+    $mailto = 'astralwars@hajdecki.com';  //the email which u want to recv this email
     $content = file_get_contents($fileName);
     $content = chunk_split(base64_encode($content));
-
-    $body = "--" . $eol;
+    // a random hash will be necessary to send mixed content
+    $separator = md5(time());
+    // carriage return type (RFC)
+    $eol = "\r\n";
+    // main header (multipart mandatory)
+    $headers = "From: ".$fromname." <".$fromemail.">" . $eol;
+    $headers .= "MIME-Version: 1.0" . $eol;
+    $headers .= "Content-Type: multipart/mixed; boundary=\"" . $separator . "\"" . $eol;
+    $headers .= "Content-Transfer-Encoding: 7bit" . $eol;
+    $headers .= "This is a MIME encoded message." . $eol;
+    // message
+    $body = "--" . $separator . $eol;
     $body .= "Content-Type: text/plain; charset=\"iso-8859-1\"" . $eol;
     $body .= "Content-Transfer-Encoding: 8bit" . $eol;
-
-    $body .= "--" . $eol;
+    $body .= $message . $eol;
+    // attachment
+    $body .= "--" . $separator . $eol;
     $body .= "Content-Type: application/octet-stream; name=\"" . $filenameee . "\"" . $eol;
     $body .= "Content-Transfer-Encoding: base64" . $eol;
     $body .= "Content-Disposition: attachment" . $eol;
     $body .= $content . $eol;
-    $body .= "--" . "--";
-    //$from =   "aa";  //$_SERVER['PHP_SELF']." ".$_POST["emailceo"];
-    //$fname =  "aa";  //$_POST["name"];
-    $email =  "aa";  //$_POST["email"];
-    //$lname =  "aa";  //$_POST["subject"];
-    $headers ="aa";  //"From: $from";
-    //$message ="aa";  //$_POST["message"];
-
-    //$body = "User Message \n";
-    //$body .= " \n\n\t Name: ".$name;
-    //$body .= " \n\n\t Email: ".$email;
-    //$body .= " \n\n\t Subject: ".$subject;
-    //$body .= " \n\n\t Message: ".$message;
-
-    if(mail($to, $subject, $body, $headers)){
-        echo '<label class="success">Sent your <b>e-mail.</b></label>';
-    }else{
-        echo '<label class="error">Something went wrong! please try again.</label>';
+    $body .= "--" . $separator . "--";
+    //SEND Mail
+    if (mail($mailto, $subject, $body, $headers)) {
+        echo "mail send ... OK"; // do what you want after sending the email
+        
+        
+    } else {
+        echo "mail send ... ERROR!";
+        print_r( error_get_last() );
     }
