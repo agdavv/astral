@@ -15,3 +15,5 @@ var_dump("hey");
     $steamStandIn2      = $_POST['steamStandIn2'];
     $steamTrener        = $_POST['steamTrener'];
     $steamCeo           = $_POST['steamCeo'];
+    
+var_dump($druzynaNazwa);
