@@ -226,7 +226,6 @@
                                         <div style="float:right;">
                                         <button type="button" id="prevBtn" onclick="nextPrev(-1)">Powrót</button>
                                         <button type="button" id="nextBtn" onclick="nextPrev(1)">Dalej</button>
-                                        <button type="submit" id="nextBtn" onclick="nextPrev(1)">potwierdz</button>
                                         </div>
                                     </div>
                                     <!-- Circles which indicates the steps of the form: -->
@@ -305,7 +304,7 @@
               // if you have reached the end of the form...
               if (currentTab >= x.length) {
                 // ... the form gets submitted:
-                document.getElementById("regForm").submit();
+                document.getElementById("zapisy").submit();
                 return false;
               }
               // Otherwise, display the correct tab:
