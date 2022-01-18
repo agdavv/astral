@@ -1,4 +1,7 @@
 <?php
+var_dump($_POST);exit;
+if(isset($_POST['zapisy'])) {
+
     require 'database.php';
 
     $druzynaNazwa       = $_POST['druzynaNazwa'];
@@ -15,9 +18,7 @@
     $steamStandIn2      = $_POST['steamStandIn2'];
     $steamTrener        = $_POST['steamTrener'];
     $steamCeo           = $_POST['steamCeo'];
-    
-    var_dump($druzynaNazwa);exit;
-    exit;
+
     if(empty($druzynaNazwa) || empty($druzynaFanpage) || empty($druzynaLogo) || empty($ceoEmail) || empty($ceoDiscord) || empty($ceoEmail) || empty($steamKapitan) || empty($steamGracz2) || empty($steamGracz2) || empty($steamGracz3) || empty($steamGracz4) || empty($steamGracz5)){
         header("location: ../index.php?error=emptyfields");
         exit();
@@ -39,6 +40,11 @@
     }
     mysqli_stmt_close($statement);
     mysqli_close($conn);
+}
+else{
+    header("location: ../index.php?a");
+    exit();
+}
 
 
 
