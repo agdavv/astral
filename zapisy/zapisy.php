@@ -15,5 +15,9 @@ var_dump("hey");
     $steamStandIn2      = $_POST['steamStandIn2'];
     $steamTrener        = $_POST['steamTrener'];
     $steamCeo           = $_POST['steamCeo'];
-    
+
+    if(empty($druzynaNazwa) || empty($druzynaFanpage) || empty($druzynaLogo) || empty($ceoEmail) || empty($ceoDiscord) || empty($ceoEmail) || empty($steamKapitan) || empty($steamGracz2) || empty($steamGracz2) || empty($steamGracz3) || empty($steamGracz4) || empty($steamGracz5)){
+        header("location: ../index.html?error=emptyfields");
+        exit();
+    }
 var_dump($druzynaNazwa);
