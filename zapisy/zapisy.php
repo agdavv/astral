@@ -1,5 +1,8 @@
 <?php
-var_dump("hey");
+var_dump($_POST);exit;
+if(isset($_POST['zapisy-guzik'])) {
+
+    require 'database.php';
 
     $druzynaNazwa       = $_POST['druzynaNazwa'];
     $druzynaFanpage     = $_POST['druzynaFanpage'];
@@ -16,8 +19,23 @@ var_dump("hey");
     $steamTrener        = $_POST['steamTrener'];
     $steamCeo           = $_POST['steamCeo'];
 
-    if(empty($druzynaNazwa) || empty($druzynaFanpage) || empty($druzynaLogo) || empty($ceoEmail) || empty($ceoDiscord) || empty($ceoEmail) || empty($steamKapitan) || empty($steamGracz2) || empty($steamGracz2) || empty($steamGracz3) || empty($steamGracz4) || empty($steamGracz5)){
-        header("location: ../index.html?error=emptyfields");
-        exit();
-    }
-var_dump($druzynaNazwa);
+
+    $sql = "
+        INSERT INTO users (druzynaNazwa,druzynaFanpage,druzynaLogo,ceoEmail,ceoDiscord,steamKapitan,steamGracz2,steamGracz3,steamGracz4,steamGracz5,steamStandIn1,steamStandIn2,steamTrener,steamCeo) 
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    $statement = mysqli_stmt_init($conn);
+
+}
+else{
+    header("location: ../index.php?a");
+    exit();
+}
+
+
+
+/*
+,druzynaNazwa,druzynaFanpage,druzynaLogo,ceoEmail,ceoDiscord,steamKapitan,steamGracz2,steamGracz3,steamGracz4,steamGracz5,steamStandIn1,steamStandIn2,steamTrener,steamCeo
+*/
+/*
+$druzynaNazw ,$druzynaFanp ,$druzynaLogo ,$ceoEmail    ,$ceoDiscord  ,$steamKapita ,$steamGracz2 ,$steamGracz3 ,$steamGracz4 ,$steamGracz5 ,$steamStandI ,$steamStandI ,$steamTrener ,$steamCeo       
+*/
