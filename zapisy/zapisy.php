@@ -1,6 +1,4 @@
 <?php
-var_dump($_POST);exit;
-if(isset($_POST['zapisy-guzik'])) {
 
     require 'database.php';
 
@@ -40,10 +38,6 @@ if(isset($_POST['zapisy-guzik'])) {
     }
     mysqli_stmt_close($statement);
     mysqli_close($conn);
-}
-else{
-    header("location: ../index.php?a");
-    exit();
 }
 
 
