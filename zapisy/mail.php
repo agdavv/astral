@@ -1,11 +1,11 @@
 <?php
-    $to = "youremail@.com"; // replace this mail with yours
-    $from = $_SERVER['PHP_SELF']." ".$_POST["email"];
-    $fname = $_POST["name"];
-    $email = $_POST["email"];
-    $lname = $_POST["subject"];
-    $headers = "From: $from";
-    $message = $_POST["message"];
+    $to = "astralwars@hajdecki.com"; // replace this mail with yours
+    $from =   "aa";  //$_SERVER['PHP_SELF']." ".$_POST["emailceo"];
+    $fname =  "aa";  //$_POST["name"];
+    $email =  "aa";  //$_POST["email"];
+    $lname =  "aa";  //$_POST["subject"];
+    $headers ="aa";  //"From: $from";
+    $message ="aa";  //$_POST["message"];
 
     $body = "User Message \n";
     $body .= " \n\n\t Name: ".$name;
