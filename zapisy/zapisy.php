@@ -1,5 +1,5 @@
 <?php
-
+var_dump($_POST);exit;
     require 'database.php';
 
     $druzynaNazwa       = $_POST['druzynaNazwa'];
