@@ -1,6 +1,5 @@
 <?php
 var_dump($_POST);exit;
-if(isset($_POST['zapisy-guzik'])) {
 
     require 'database.php';
 
@@ -24,12 +23,6 @@ if(isset($_POST['zapisy-guzik'])) {
         INSERT INTO users (druzynaNazwa,druzynaFanpage,druzynaLogo,ceoEmail,ceoDiscord,steamKapitan,steamGracz2,steamGracz3,steamGracz4,steamGracz5,steamStandIn1,steamStandIn2,steamTrener,steamCeo) 
         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
     $statement = mysqli_stmt_init($conn);
-
-}
-else{
-    header("location: ../index.php?a");
-    exit();
-}
 
 
 
