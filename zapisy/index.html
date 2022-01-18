@@ -109,7 +109,7 @@
 
                         <div class="row">
                             <div class="col-xs-12 col-sm-7 col-md-7 col-md-offset-1 col-lg-offset-2">
-                                    <form id="regForm" action="/mail.php" class="contact-form no-gutter">
+                                    <form id="regForm" action="./mail.php" method="post" class="contact-form no-gutter">
                                         <h1>Formularz Zgłoszeniowy:</h1>
                                         <!-- One "tab" for each step in the form: -->
                                         <div class="tab" style="margin-top: 16px;">
@@ -296,7 +296,7 @@
               // This function will figure out which tab to display
               var x = document.getElementsByClassName("tab");
               // Exit the function if any field in the current tab is invalid:
-              if (n == 1 && !validateForm()) return false;
+              //if (n == 1 && !validateForm()) return false;
               // Hide the current tab:
               x[currentTab].style.display = "none";
               // Increase or decrease the current tab by 1:
