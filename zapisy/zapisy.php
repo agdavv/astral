@@ -1,5 +1,5 @@
 <?php
-if(isset($_POST['zapisy'])) {
+if(isset($_POST['zapisy-guzik'])) {
 
     require 'database.php';
 
