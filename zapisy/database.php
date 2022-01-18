@@ -1,7 +1,7 @@
 <?php
 
 $servername = "localhost";
-$dbUsername = "Astral";
+$dbUsername = "astral";
 $dbPassword = "Astralqwe1";
 $dbName = "Astral";
 
