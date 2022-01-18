@@ -25,11 +25,11 @@
     //$headers ="aa";  //"From: $from";
     //$message ="aa";  //$_POST["message"];
 
-    $body = "User Message \n";
-    $body .= " \n\n\t Name: ".$name;
-    $body .= " \n\n\t Email: ".$email;
-    $body .= " \n\n\t Subject: ".$subject;
-    $body .= " \n\n\t Message: ".$message;
+    //$body = "User Message \n";
+    //$body .= " \n\n\t Name: ".$name;
+    //$body .= " \n\n\t Email: ".$email;
+    //$body .= " \n\n\t Subject: ".$subject;
+    //$body .= " \n\n\t Message: ".$message;
 
     if(mail($to, $subject, $body, $headers)){
         echo '<label class="success">Sent your <b>e-mail.</b></label>';
